@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Mobile App - CUBRT</title>
+        <title>FFMPEG Configurations - CUBRT</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Telemtry and streaming <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Telemetry and streaming <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -57,11 +57,11 @@
 </li>
                                     
 <li>
-    <a href="../ffmpeg/" class="dropdown-item">FFMPEG Configurations</a>
+    <a href="./" class="dropdown-item active">FFMPEG Configurations</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Mobile App</a>
+    <a href="../mobile-app/" class="dropdown-item">Mobile App</a>
 </li>
                                     
 <li>
@@ -78,17 +78,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../ffmpeg/" class="nav-link">
+                                <a rel="prev" href="../" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../python-app/" class="nav-link">
+                                <a rel="next" href="../mobile-app/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://github.com/CUBRT/docs/edit/master/docs/telemtry_and_streaming/mobile-app.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/CUBRT/docs/edit/master/docs/telemetry_and_streaming/ffmpeg.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -108,21 +108,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#mobile-app" class="nav-link">Mobile App</a>
+            <li class="nav-item" data-level="1"><a href="#ffmpeg-configurations" class="nav-link">FFMPEG Configurations</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#streaming" class="nav-link">Streaming</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#telemetry" class="nav-link">Telemetry</a>
+            <li class="nav-item" data-level="2"><a href="#react-native" class="nav-link">React Native</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#components" class="nav-link">Components</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#helper-functions" class="nav-link">Helper Functions</a>
+            <li class="nav-item" data-level="2"><a href="#linux" class="nav-link">Linux</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -133,63 +125,43 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="mobile-app">Mobile App</h1>
-<p>The app is built using React Native. </p>
-<ul>
-<li><a href="https://github.com/CUBRT/BuffsRacing-Control">GitHub Link</a></li>
-<li>App Links<ul>
-<li>iOS - Testflight - On Request</li>
-<li>Android - APK - On Request</li>
-</ul>
-</li>
-</ul>
-<h2 id="streaming">Streaming</h2>
-<p>Refer to the page on <a href="../ffmpeg">FFMPEG</a> - <a href="../ffmpeg">LINK</a></p>
-<h2 id="telemetry">Telemetry</h2>
-<h3 id="phone-sensors">Phone Sensors</h3>
-<h4 id="react-native-geolocation-service">react-native-geolocation-service</h4>
-<p>We use this package to request for the device's latitude, longitude, and calculated speed.</p>
-<p>Sample code:</p>
-<pre><code class="language-javascript">import Geolocation from 'react-native-geolocation-service';
-</code></pre>
-<pre><code class="language-javascript">Geolocation.getCurrentPosition(
-    (position) =&gt; {
-      var positionCoords = position.coords;
-      console.log(positionCoords);
-      console.log(positionCoords.latitude);
-    },
-    (error) =&gt; {
-      console.log(error.code,error.message);
+<h1 id="ffmpeg-configurations">FFMPEG Configurations</h1>
+<h2 id="react-native">React Native</h2>
+<p>To test if FFMPEG is correctly installed, you can use this command to perform a test stream.</p>
+<p><code>ffmpeg -v verbose -t 05:00 -f lavfi -i testsrc -f lavfi -i testsrc -f lavfi -i testsrc -f lavfi -i testsrc -ar 44100 -r 30 -g 60 -keyint_min 60 -b:v 400000 -c:v libx264 -preset medium -bufsize 400k -maxrate 400k -f flv rtmp://YOUR_RTMP_URL</code></p>
+<p>Equivalent React Native Code:</p>
+<pre><code class="language-javascript">import { FFmpegKit,ReturnCode } from 'ffmpeg-kit-react-native';
+
+FFmpegKit.execute(`-v verbose -t 05:00 -f lavfi -i testsrc -f lavfi -i testsrc -f lavfi -i testsrc -f lavfi -i testsrc -ar 44100 -r 30 -g 60 -keyint_min 60 -b:v 400000 -c:v libx264 -preset medium -bufsize 400k -maxrate 400k -f flv &quot;${rtmpURL}&quot;`).then(async (session) =&gt; {
+    const returnCode = await session.getReturnCode();
+
+    if (ReturnCode.isSuccess(returnCode)) {
+
+      // SUCCESS
+
+    } else if (ReturnCode.isCancel(returnCode)) {
+
+      // CANCEL
+
+    } else {
+
+      // ERROR
+
     }
-    )
+  });
 </code></pre>
-<h4 id="react-native-sensors-temporarily-removed">react-native-sensors (temporarily removed)</h4>
-<p>Gives access to the phone's gyroscope and accelerometer</p>
-<h3 id="obd2rest">OBD2REST</h3>
-<p>Communicates to the Raspberry Pi Zero W to access the OBD-II data</p>
-<h2 id="components">Components</h2>
-<h3 id="componentslayoutstuffjs"><code>components/layoutStuff.js</code></h3>
-<p>This component defines a section divider with optional header support. The header can be supplied by passing a title attribute.</p>
-<p>Example:</p>
-<pre><code class="language-javascript">&lt;Section title=&quot;Useless Padding&quot; /&gt;
-</code></pre>
-<h2 id="helper-functions">Helper Functions</h2>
-<h3 id="toast-message">Toast Message</h3>
-<pre><code class="language-javascript">import Toast from 'react-native-toast-message';
-</code></pre>
-<pre><code class="language-javascript">const toastMessage = (title,message,type=&quot;success&quot;) =&gt; {
-  Toast.show({
-    type: type,
-    position: &quot;top&quot;,
-    text1: title,
-    text2: message
-})
-}
-</code></pre>
-<pre><code class="language-javascript">toastMessage(&quot;Toast Title&quot;,&quot;Toast Message&quot;)
-</code></pre>
-<h3 id="permissions">Permissions</h3>
-<p>Refer to <code>react-native-permissions</code></p></div>
+<p>An iPhone 12, is able to stream <code>1280x720</code> normally on a stable WiFi connection, whereas a Google Pixel 3 streaming <code>640x480</code> is still a bit choppy. This could probably be improved by tweaking the ffmpeg command.</p>
+<h3 id="android">Android</h3>
+<p>The input device on Android is called <code>android_camera</code>. Sadly, FFMPEG on Android cannot use the microphone. Thus, if trying to set the RTMP URL to YouTube, <code>-i anullsrc</code> flag needs to be passed to add a silent audio. Otherwise, streaming to YouTube will silently fail.</p>
+<p><code>ffmpeg -f android_camera -video_size 640x480 -i discarded -r 30 -c:v libx264 -f flv "YOUR_RTMP_URL"</code></p>
+<p>The hardcoded resolution of <code>640x480</code> will be moved to a configurable option in the app.</p>
+<h3 id="ios">iOS</h3>
+<p>The input device on iOS is called <code>avfoundation</code>. </p>
+<p><code>ffmpeg -f avfoundation -r 30 -video_size 1280x720 -pixel_format bgr0 -i 0:0 -vcodec h264_videotoolbox -vsync 2 -f flv "YOUR_RTMP_URL"</code></p>
+<p>The hardcoded resolution of <code>1280x720</code> will be moved to a configurable option in the app.</p>
+<h2 id="linux">Linux</h2>
+<p>As of writing the script, Raspberry Pi OS (64 bit) was still in beta, and <code>video4linux</code> was not working properly in our testing. Thus, we tested this command on Raspbian OS, and are in the process of updating the Pi to RPi OS and updating the command.</p>
+<p><code>ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 -c:v libx264 -b:v 700k -maxrate 700k -bufsize 700k -an -f flv rtmp://YOUR_RTMP_URL</code></p></div>
             </div>
         </div>
 
