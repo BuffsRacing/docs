@@ -18,7 +18,7 @@ Saves video to SD-Card at full HD resolution
 
 ### Raspberry Pi 4
 
-To run the [Python program](../telemtry_and_streaming/python-app/)
+To run the [Python program](../telemetry_and_streaming/python-app/)
 
 ### Raspberry Pi Zero W
 
@@ -26,4 +26,4 @@ API Server
 
 ## Android/iOS Smartphone
 
-To run the [mobile app](../telemtry_and_streaming/mobile-app/)
+To run the [mobile app](../telemetry_and_streaming/mobile-app/)
