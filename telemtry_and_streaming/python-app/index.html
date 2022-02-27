@@ -7,15 +7,15 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Telemetry and Streaming - CUBRT</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Python App - CUBRT</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/mono-blue.min.css">
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">CUBRT</a>
+                <a class="navbar-brand" href="../..">CUBRT</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,17 +34,17 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
+                                <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="../visualisation/" class="nav-link">Visualisation</a>
+                                <a href="../../visualisation/" class="nav-link">Visualisation</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../hardware/" class="dropdown-item">Hardware</a>
+    <a href="../../hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -53,19 +53,19 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Telemetry and Streaming</a>
+    <a href="../" class="dropdown-item">Telemetry and Streaming</a>
 </li>
                                     
 <li>
-    <a href="ffmpeg/" class="dropdown-item">FFMPEG Configurations</a>
+    <a href="../ffmpeg/" class="dropdown-item">FFMPEG Configurations</a>
 </li>
                                     
 <li>
-    <a href="mobile-app/" class="dropdown-item">Mobile App</a>
+    <a href="../mobile-app/" class="dropdown-item">Mobile App</a>
 </li>
                                     
 <li>
-    <a href="python-app/" class="dropdown-item">Python App</a>
+    <a href="./" class="dropdown-item active">Python App</a>
 </li>
                                 </ul>
                             </li>
@@ -78,17 +78,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../hardware/" class="nav-link">
+                                <a rel="prev" href="../mobile-app/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="ffmpeg/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://github.com/CUBRT/docs/edit/master/docs/telemtry_and_streaming/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/CUBRT/docs/edit/master/docs/telemtry_and_streaming/python-app.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -108,7 +108,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#telemetry-and-streaming" class="nav-link">Telemetry and Streaming</a>
+            <li class="nav-item" data-level="1"><a href="#python-app" class="nav-link">Python App</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -117,25 +117,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="telemetry-and-streaming">Telemetry and Streaming</h1>
-<p>Our telemetry system is deployed via two methods:</p>
-<ul>
-<li>
-<p>A mobile app built using React Native</p>
-</li>
-<li>
-<p>A Raspberry Pi 4 (Although, it can be deployed on any Linux powered SBC)</p>
-</li>
-</ul>
-<p>Modules and Documentation:</p>
-<ul>
-<li>Streaming<ul>
-<li><a href="./ffmpeg">FFMPEG Commands and Information</a> - <a href="./ffmpeg">LINK</a></li>
-</ul>
-</li>
-<li><a href="./mobile-app">Mobile App</a> - <a href="./mobile-app">LINK</a></li>
-<li><a href="./python-app">Python App</a> - <a href="./python-app">LINK</a></li>
-</ul></div>
+<h1 id="python-app">Python App</h1>
+<p>This python program uses the <code>typer</code> module to create a command line interface.</p></div>
             </div>
         </div>
 
@@ -144,11 +127,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "..",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

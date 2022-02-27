@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Telemetry and Streaming - CUBRT</title>
+        <title>Hardware - CUBRT</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -39,33 +39,33 @@
                             <li class="navitem">
                                 <a href="../visualisation/" class="nav-link">Visualisation</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../hardware/" class="dropdown-item">Hardware</a>
+    <a href="./" class="dropdown-item active">Hardware</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Telemtry and streaming <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Telemetry and Streaming</a>
+    <a href="../telemtry_and_streaming/" class="dropdown-item">Telemetry and Streaming</a>
 </li>
                                     
 <li>
-    <a href="ffmpeg/" class="dropdown-item">FFMPEG Configurations</a>
+    <a href="../telemtry_and_streaming/ffmpeg/" class="dropdown-item">FFMPEG Configurations</a>
 </li>
                                     
 <li>
-    <a href="mobile-app/" class="dropdown-item">Mobile App</a>
+    <a href="../telemtry_and_streaming/mobile-app/" class="dropdown-item">Mobile App</a>
 </li>
                                     
 <li>
-    <a href="python-app/" class="dropdown-item">Python App</a>
+    <a href="../telemtry_and_streaming/python-app/" class="dropdown-item">Python App</a>
 </li>
                                 </ul>
                             </li>
@@ -78,17 +78,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../hardware/" class="nav-link">
+                                <a rel="prev" href="../visualisation/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="ffmpeg/" class="nav-link">
+                                <a rel="next" href="../telemtry_and_streaming/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://github.com/CUBRT/docs/edit/master/docs/telemtry_and_streaming/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/CUBRT/docs/edit/master/docs/hardware/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -108,8 +108,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#telemetry-and-streaming" class="nav-link">Telemetry and Streaming</a>
+            <li class="nav-item" data-level="1"><a href="#hardware" class="nav-link">Hardware</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#esp32" class="nav-link">ESP32</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#raspberry-pi" class="nav-link">Raspberry Pi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#androidios-smartphone" class="nav-link">Android/iOS Smartphone</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -117,25 +129,21 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="telemetry-and-streaming">Telemetry and Streaming</h1>
-<p>Our telemetry system is deployed via two methods:</p>
-<ul>
-<li>
-<p>A mobile app built using React Native</p>
-</li>
-<li>
-<p>A Raspberry Pi 4 (Although, it can be deployed on any Linux powered SBC)</p>
-</li>
-</ul>
-<p>Modules and Documentation:</p>
-<ul>
-<li>Streaming<ul>
-<li><a href="./ffmpeg">FFMPEG Commands and Information</a> - <a href="./ffmpeg">LINK</a></li>
-</ul>
-</li>
-<li><a href="./mobile-app">Mobile App</a> - <a href="./mobile-app">LINK</a></li>
-<li><a href="./python-app">Python App</a> - <a href="./python-app">LINK</a></li>
-</ul></div>
+<h1 id="hardware">Hardware</h1>
+<h2 id="esp32">ESP32</h2>
+<h3 id="esp32-cam">ESP32-CAM</h3>
+<p>RTSP / Save to Disk</p>
+<h4 id="rtsp-streamer">RTSP Streamer</h4>
+<p>Starts mDNS responder and can be accessed via <code>ralphiecam-00.local</code>. Every camera that is added, automatically increments that number.</p>
+<h4 id="save-to-disk">Save to Disk</h4>
+<p>Saves video to SD-Card at full HD resolution</p>
+<h2 id="raspberry-pi">Raspberry Pi</h2>
+<h3 id="raspberry-pi-4">Raspberry Pi 4</h3>
+<p>To run the <a href="../telemtry_and_streaming/python-app/">Python program</a></p>
+<h3 id="raspberry-pi-zero-w">Raspberry Pi Zero W</h3>
+<p>API Server</p>
+<h2 id="androidios-smartphone">Android/iOS Smartphone</h2>
+<p>To run the <a href="../telemtry_and_streaming/mobile-app/">mobile app</a></p></div>
             </div>
         </div>
 
