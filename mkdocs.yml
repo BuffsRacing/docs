@@ -1,0 +1,5 @@
+site_name: CUBRT
+repo_url: https://github.com/CUBRT/docs
+
+theme:
+  name: bootstrap386
